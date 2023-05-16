@@ -1,0 +1,25 @@
+{
+  "name": "mean-board-games",
+  "version": "1.0.0",
+  "description": "MEAN Board Games is a sample in class project that is built from scratch using MEAN",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3ouri/mean-board-games.git"
+  },
+  "keywords": [
+    "MONGODB",
+    "EXPRESS",
+    "NODE",
+    "ANGULAR"
+  ],
+  "author": "Abdallah Mustafa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3ouri/mean-board-games/issues"
+  },
+  "homepage": "https://github.com/3ouri/mean-board-games#readme"
+}
