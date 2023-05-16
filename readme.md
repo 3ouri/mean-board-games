@@ -1,3 +1,1 @@
-Start Creating MEAN Games
-
-This is my solution for an in class exercise.
+MEAN Board Games is a sample in class project that is built from scratch using MEAN
