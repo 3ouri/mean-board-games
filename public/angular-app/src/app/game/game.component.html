@@ -1,0 +1,13 @@
+<h1>{{game.title}} - {{game.rate}}</h1>
+<br>
+Year: {{game.year}} <br>
+Price: {{game.price}} <br>
+Minimum Players: {{game.minPlayers}} <br>
+Maximum Players: {{game.maxPlayers}} <br>
+Minimum Age: {{game.minAge}} <br>
+<button (click) = "onDelete(game._id)">Delete</button>
+<button routerLink="/games">Back</button>
+<button (click)="onEdit()">Edit</button>
+
+<app-edit-game *ngIf="showEditComponent" [game]="game" (updateEvent)="updateGame($event)"></app-edit-game>
+<!-- <app-edit-game-view-child [game]="game"></app-edit-game-view-child> -->

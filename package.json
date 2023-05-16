@@ -4,7 +4,11 @@
   "description": "MEAN Board Games is a sample in class project that is built from scratch using MEAN",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"startApi": "nodemon",
+    "startAngular": "npm start --prefix public/angular-app",
+    "start": "npm-run-all --parallel startApi startAngular",
+    "test": "echo \"Error: no test specified\" && exit 1",
+	  "dev": "nodemon --inspect"
   },
   "repository": {
     "type": "git",

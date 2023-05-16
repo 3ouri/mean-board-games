@@ -1,0 +1,39 @@
+<form #editGameForm="ngForm" (ngSubmit)="onSubmit(editGameForm)" novalidate>
+    <div>
+      <label for="title">Title</label>
+      <input name="title" type="text" placeholder="Title of the board game" required ngModel />
+    </div>
+    <div>
+      <label for="year">Year</label>
+      <input name="year" type="text" placeholder="Year game released" ngModel />
+    </div>
+    <div>
+      <label for="price">Price</label>
+      <input name="price" type="text" placeholder="Price of the game" ngModel/>
+    </div>
+    <div>
+      <label for="minPlayers">Minimum Players</label>
+      <input name="minPlayers" type="text" placeholder="Minimum number of players" ngModel />
+    </div>
+    <div>
+      <label for="maxPlayers">Maximum Players</label>
+      <input name="maxPlayers" type="text" placeholder="Maximum number of players" ngModel />
+    </div>
+    <div>
+      <label for="minAge">Minimum Age</label>
+      <input name="minAge" type="text" placeholder="Minimum age required to play" ngModel />
+    </div>
+    <div>
+      <label for="rate">Rating</label>
+      <select name="rate" id="rate" ngModel>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+      </select>
+    </div>
+    <button type="submit" [disabled]="!editGameForm.valid">Save</button>
+    <button routerLink="/games">Back</button>
+  </form>
+  
