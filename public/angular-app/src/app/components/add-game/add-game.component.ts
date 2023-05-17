@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Game } from '../games/games.component';
-import { GamesDataService } from '../games-data.service';
+import { GamesDataService } from '../../services/games-data.service';
 
 @Component({
   selector: 'app-add-game',
@@ -22,26 +22,25 @@ export class AddGameComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.addGameForm = new FormGroup({
-      title: new FormControl(),
-      year: new FormControl(),
-      price: new FormControl(),
-      minPlayers: new FormControl(),
-      maxPlayers: new FormControl(),
-      minAge: new FormControl(),
-      rate: new FormControl(),
-    });
-
-    /* in-case of edit we can use this */
-    // this.addGameForm = this._formBuilder.group({
-    //   title: ["Lido", Validators.required],
-    //   year: 1988,
-    //   price: 33.99,
-    //   minPlayers: 2,
-    //   maxPlayers: 4,
-    //   minAge: 8,
-    //   rate: 4,
+    // this.addGameForm = new FormGroup({
+    //   title: new FormControl(),
+    //   year: new FormControl(),
+    //   price: new FormControl(),
+    //   minPlayers: new FormControl(),
+    //   maxPlayers: new FormControl(),
+    //   minAge: new FormControl(),
+    //   rate: new FormControl(),
     // });
+
+    this.addGameForm = this._formBuilder.group({
+      title: ["", Validators.required],
+      year: "",
+      price: "",
+      minPlayers: "",
+      maxPlayers: "",
+      minAge: "",
+      rate: "",
+    });
   }
 
   onSubmit(form: FormGroup){

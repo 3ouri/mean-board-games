@@ -1,8 +1,8 @@
 <form [formGroup]="addGameForm" (ngSubmit)="onSubmit(addGameForm)">
   <div>
-    <label for="name">Title</label>
+    <label for="title">Title</label>
     <input formControlName="title" type="text" placeholder="Title of the board game" />
-    <span *ngIf="addGameForm.controls['title'].errors" style="color: red">Board game title is required</span>
+    <span *ngIf="addGameForm.controls['title'].invalid && addGameForm.controls['title'].touched" style="color: red">Board game title is required</span>
   </div>
   <div>
     <label for="year">Year</label>

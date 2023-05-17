@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { response } from 'express';
-import { Observable } from 'rxjs';
-import { Game } from './games/games.component';
+import { Observable, Subscription } from 'rxjs';
+import { Game } from '../components/games/games.component';
 
 @Injectable({
   providedIn: 'root'
 })
-export class GamesDataService {
+export class GamesDataService implements OnDestroy {
 
-  #baseUrl:string = "http://localhost:3000/api"
+  #baseUrl:string = "http://localhost:3000/api";
 
   constructor(private http:HttpClient) { }
 
@@ -35,5 +35,9 @@ export class GamesDataService {
   public updateOne(id:string, game:Game):Observable<Game> {
     const url = this.#baseUrl + "/games/" + id;
     return this.http.patch<Game>(url, game);
+  }
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
   }
 }

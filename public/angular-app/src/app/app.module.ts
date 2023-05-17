@@ -4,17 +4,19 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { HeaderComponent } from './header/header.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { HomeComponent } from './home/home.component';
-import { GamesComponent } from './games/games.component';
-import { GameComponent } from './game/game.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
-import { AddGameComponent } from './add-game/add-game.component';
-import { EditGameComponent } from './edit-game/edit-game.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { HomeComponent } from './components/home/home.component';
+import { GamesComponent } from './components/games/games.component';
+import { GameComponent } from './components/game/game.component';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
+import { AddGameComponent } from './components/add-game/add-game.component';
+import { EditGameComponent } from './components/edit-game/edit-game.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditGameViewChildComponent } from './edit-game-view-child/edit-game-view-child.component';
+import { EditGameViewChildComponent } from './components/edit-game-view-child/edit-game-view-child.component';
+import { MessageComponent } from './components/message/message.component';
+import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,36 +29,12 @@ import { EditGameViewChildComponent } from './edit-game-view-child/edit-game-vie
     GameComponent,
     AddGameComponent,
     EditGameComponent,
-    EditGameViewChildComponent
+    EditGameViewChildComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      {
-        path: "",
-        component: HomeComponent
-      },
-      {
-        path: "games",
-        component: GamesComponent
-      },
-      {
-        path: "games/add",
-        component: AddGameComponent
-      },
-      {
-        path: "games/edit",
-        component: EditGameComponent
-      },
-      {
-        path: "games/:gameId",
-        component: GameComponent
-      },
-      {
-        path: "**",
-        component: ErrorPageComponent
-      }
-    ]),
+    AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule

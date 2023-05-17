@@ -36,6 +36,6 @@
       </select>
     </div>
     <button type="submit" [disabled]="!editGameForm.valid">Save</button>
-    <button routerLink="/games">Back</button>
+    <button (click)="onCancel()">Cancel</button>
   </form>
   

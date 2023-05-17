@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { GamesDataService } from '../games-data.service';
+import { GamesDataService } from '../../services/games-data.service';
 import { Observable, min } from 'rxjs';
 import { Router } from '@angular/router';
+import { MessageService } from '../../services/message.service';
 
 @Component({
   selector: 'app-games',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 export class GamesComponent implements OnInit {
   games: Game[] = [];
 
-  constructor(private gamesService:GamesDataService, private router: Router){}
+  constructor(private gamesService:GamesDataService,private router: Router, private messageService:MessageService){ }
 
   ngOnInit():void{
     this.getAll();
@@ -28,8 +29,13 @@ export class GamesComponent implements OnInit {
     if(confirmDelete){
       this.gamesService.deleteOne(id).subscribe(() => {
         this.getAll();
+        this.showToastMessage("Game Deleted Successfully");
       });
     }
+  }
+
+  private showToastMessage(message: string) {
+    this.messageService.sendMessageAndClear(message);
   }
 
   onAdd(){

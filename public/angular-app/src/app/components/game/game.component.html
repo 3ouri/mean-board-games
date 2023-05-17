@@ -9,5 +9,5 @@ Minimum Age: {{game.minAge}} <br>
 <button routerLink="/games">Back</button>
 <button (click)="onEdit()">Edit</button>
 
-<app-edit-game *ngIf="showEditComponent" [game]="game" (updateEvent)="updateGame($event)"></app-edit-game>
+<app-edit-game *ngIf="showEditComponent" [game]="game" (updateEvent)="updateGame($event)" (cancelEvent)="hideEditForm($event)"></app-edit-game>
 <!-- <app-edit-game-view-child [game]="game"></app-edit-game-view-child> -->
